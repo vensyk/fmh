@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuth } from '@/context/AuthContext'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import ClientOnly from '@/components/ClientOnly'
 
 // Define puzzle patterns
@@ -123,10 +124,12 @@ function GameContent() {
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             {user?.photoURL && (
-              <img 
-                src={user.photoURL} 
-                alt="Profile" 
-                className="w-8 h-8 rounded-full"
+              <Image 
+                src={user.photoURL}
+                alt="Profile"
+                width={32}
+                height={32}
+                className="rounded-full"
               />
             )}
             <span className="text-gray-700">Welcome, {user?.displayName}</span>
@@ -199,7 +202,7 @@ function GameContent() {
             </div>
 
             {message && (
-              <div className={`text-center ${message.includes('Correct') ? 'text-green-600' : 'text-red-600'}`}>
+              <div className={`text-center ${message.includes("Correct") ? "text-green-600" : "text-red-600"}`}>
                 {message}
               </div>
             )}
@@ -209,7 +212,7 @@ function GameContent() {
                 onClick={() => setShowHint(!showHint)}
                 className="text-red-400 hover:text-red-500 transition-colors"
               >
-                {showHint ? 'Hide Hint' : 'Show Hint'}
+                {showHint ? "Hide Hint" : "Show Hint"}
               </button>
               {showHint && (
                 <p className="mt-2 text-gray-600 italic">
@@ -239,7 +242,7 @@ function GameContent() {
                 Congratulations! 🎉
               </h2>
               <p className="text-xl mb-6">
-                You've found all the pieces and completed the heart! ❤️
+                You&apos;ve found all the pieces and completed the heart! ❤️
               </p>
               <button
                 onClick={() => setShowCongrats(false)}

@@ -2,6 +2,7 @@
 
 import { useAuth } from '@/context/AuthContext'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 import ClientOnly from '@/components/ClientOnly'
 
 export default function Home() {
@@ -52,10 +53,12 @@ function AuthContent() {
           onClick={signInWithGoogle}
           className="inline-flex items-center bg-white border border-gray-300 px-6 py-3 rounded-full hover:bg-gray-50 transition-colors"
         >
-          <img 
-            src="https://www.google.com/favicon.ico" 
-            alt="Google" 
-            className="w-5 h-5 mr-2"
+          <Image 
+            src="https://www.google.com/favicon.ico"
+            alt="Google"
+            width={20}
+            height={20}
+            className="mr-2"
           />
           Sign in with Google
         </button>
