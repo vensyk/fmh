@@ -54,7 +54,7 @@ function AuthContent() {
           className="inline-flex items-center bg-white border border-gray-300 px-6 py-3 rounded-full hover:bg-gray-50 transition-colors"
         >
           <Image 
-            src="https://www.google.com/favicon.ico"
+            src="/images/google.svg"
             alt="Google"
             width={20}
             height={20}
